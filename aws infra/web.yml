@@ -1,3 +1,41 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: AWS infra for web
 
+Resources:
+
+  #VPC
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.1/16
+      InstanceTenancy: default
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - key: Name 
+          value: web-vpc
+  
+  #subnet
+  Subnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      availabilityZone: ap-northeast-2a
+      cidrBlock: 10.0.1.0/24
+      MapPublicIpOnLaunch: 'true'
+      vpcId: !Ref VPC
+      tags:
+        - key: Name
+          value: web-subnet
+
+  #InternetGateway
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - key: Name
+          value: web-gw
+  #EIP  
+  eccEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: !Ref eccVpc
