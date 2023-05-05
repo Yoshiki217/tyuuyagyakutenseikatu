@@ -39,3 +39,82 @@ Resources:
     Type: AWS::EC2::EIP
     Properties:
       Domain: !Ref web-Vpc
+  #EC2
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref AMI
+      InstanceType: "t2.micro"
+      SubnetId: !Ref Subnet
+      BlockDeviceMappings:
+        - DeviceName: '/dev/xvda'
+          Ebs:
+            VolumeType: 'gp2'
+            VolumeSize: 8
+      Tags:
+        - Key: 'Name'
+          Value: 'public-wb'
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      KeyName: !Ref KeyPair
+
+  #EC2(private_b)
+  EC2Instance2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref AMI
+      InstanceType: "t2.micro"
+      SubnetId: !Ref Subnet2
+      BlockDeviceMappings:
+        - DeviceName: '/dev/xvda'
+          Ebs:
+            VolumeType: 'gp2'
+            VolumeSize: 8
+      Tags:
+        - Key: 'Name'
+          Value: 'private'
+      SecurityGroupIds:
+        - !Ref SecurityGroup2
+      KeyName: !Ref KeyPair
+
+  #SecurityGroup(public_a)    
+  SecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "public-sg"
+      VpcId: !Ref Vpc
+      Tags:
+        - Key: 'Name'
+          Value: 'public-sg'
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: 0.0.0.0/0
+      - IpProtocol: tcp
+        FromPort: '80'
+        ToPort: '80'
+        CidrIp: 0.0.0.0/0
+  
+  #SecurityGroup(private_b)
+  SecurityGroup2:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "private-sg"
+      VpcId: !Ref vpc
+      Tags:
+        - Key: 'Name'
+          Value: 'private-sg'
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: 10.1.0.0/16
+      - IpProtocol: tcp
+        FromPort: '3306'
+        ToPort: '3306'
+        CidrIp: 10.1.0.0/16
+      - IpProtocol: icmp
+        FromPort: '8'
+        ToPort: '-1'
+        CidrIp: 10.1.0.0/16
