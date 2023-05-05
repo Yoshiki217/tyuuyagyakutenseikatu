@@ -35,7 +35,7 @@ Resources:
         - key: Name
           value: web-gw
   #EIP  
-  eccEIP:
+  EIP:
     Type: AWS::EC2::EIP
     Properties:
-      Domain: !Ref eccVpc
+      Domain: !Ref web-Vpc
