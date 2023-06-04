@@ -1,5 +1,4 @@
 import './globals.css'
-import 'tailwindcss/tailwind.css'
 import { Inter } from 'next/font/google'
 import Header from './header';
 import Footer from './footer';
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='bg-white'>
+    <html lang="ja" className='bg-white'>
       <body className={inter.className}>
         <Header />
         {children}
