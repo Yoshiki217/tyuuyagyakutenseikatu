@@ -10,13 +10,13 @@ const montserrat = Montserrat({
 export default function Concept() {
   return (
     <>
-    <div className={montserrat.className}>
-        <p className='flex justify-center text-center bg-white py-40 px-auto'>
-            stillness and motion , mininal and maximal , mode and tradition.
-            <br></br><br></br>
-            「無から有へ。そのはざまの部分を表現する。」
-        </p>
-    </div>
+        <div className={montserrat.className}>
+            <p className='flex justify-center text-center bg-white py-40 px-auto'>
+                stillness and motion , mininal and maximal , mode and tradition.
+                <br></br><br></br>
+                「無から有へ。そのはざまの部分を表現する。」
+            </p>
+        </div>
     </>
   )
 }
