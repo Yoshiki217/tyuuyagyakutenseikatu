@@ -7,7 +7,7 @@ const montserrat = Montserrat({
     display: "swap",
   });
   
-export default function Concept() {
+export default function BrandConcept() {
   return (
     <>
         <div className={montserrat.className}>
