@@ -5,37 +5,37 @@ import Image from "next/image";
 const Home: NextPage = () => {
   return (
     <>
-      <div>
-        <span>アンセルム</span> <span>2023年春夏</span> <span>メンズ</span>
-          <Image className="w-344 h-229 "
-            src="/ancellm.jpg"
-            width={344}
-            height={229}
-            alt="Ancellm"
-            
-          />
-        <a href="https://www.fashion-press.net/collections/17053">ルック</a>
-        <div>
-          <span>シュタイン</span> <span>2023-24年秋冬</span> <span>ウィメンズ&メンズ</span>
-          <Image
-            src="/stein.jpg"
-            width={344}
-            height={229}
-            alt="Stein"
-          />
+    
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <div className="mb-6 flex items-end justify-start gap-4">
+            <div>
+              <a href="https://homelesstailor.tumblr.com/post/186747414468/19aw" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+                <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="wobject-cover object-center transition duration-200 group-hover:scale-110"/>
+                <span className="text-gray-500">Homelestailor  ルック</span>
+              </a>
+              <div>
+                <a href="https://homelesstailor.tumblr.com/post/186747414468/19aw" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+                  <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="object-cover object-center transition duration-200 group-hover:scale-110"/>
+                  <span className="text-gray-500">Homelestailor  ルック</span>
+                </a>
+              </div>
+            </div>
+            <div>
+              <a href="https://homelesstailor.tumblr.com/post/186747414468/19aw" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+                <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="object-cover object-center transition duration-200 group-hover:scale-110"/>
+                <span className="text-gray-500">Homelestailor  ルック</span>
+              </a>
+              <div>
+                <a href="https://homelesstailor.tumblr.com/post/186747414468/19aw" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+                  <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="object-cover object-center transition duration-200 group-hover:scale-110"/>
+                  <span className="text-gray-500">Homelestailor  ルック</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="https://www.fashion-press.net/collections/18176">ルック</a>
-
-        <div>
-          <Image
-            src="/stein.jpg"
-            width={344}
-            height={229}
-            alt="Stein"
-          />
-        </div>  
-        <a href="https://www.fashion-press.net/collections/18176">ルック</a>
-      </div>
+      </div>    
     </>
   );
 };
