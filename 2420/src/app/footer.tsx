@@ -3,6 +3,8 @@ import Link from 'next/link';
 const footer = () => {
   return (
     <div className="bg-white pt-4 sm:pt-10 lg:pt-12">
+      <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js"></script>
       <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="flex flex-col items-center border-t pt-6">
           {/* <!-- nav - start --> */}
@@ -39,13 +41,16 @@ const footer = () => {
                 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
               </svg>
             </a>
+            <a href="#mailgo" data-address="hello" data-domain="example.com" className='btn'>お問い合わせ</a>
           </div>
           {/* <!-- social - end --> */}
         </div>
 
         <div className="py-8 text-center text-sm text-gray-400">© 2021 - Present Flowrift. All rights reserved.</div>
+        
       </footer>
     </div>
+    
   );
 };
 export default footer;

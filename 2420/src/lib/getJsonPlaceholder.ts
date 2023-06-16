@@ -12,3 +12,9 @@ export type postType = {
     if (!res.ok) throw new Error('getPostsで異常が発生しました。');
     return res.json() as Promise<postsType>;
   };
+
+  export const getPost = async (id: string) => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    if (!res.ok) throw new Error('getPostで異常が発生しました。');
+    return res.json() as Promise<postType>;
+  };
