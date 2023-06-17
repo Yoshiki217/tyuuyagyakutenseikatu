@@ -18,12 +18,14 @@ const page = async ({ params }: { params: paramsType }) => {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>{title}</h1>
-      <div className={styles.article}>
-        {bodys.map((body, i) => (
-          <p key={i}>{body}</p>
-        ))}
-      </div>
+        <h1 className={styles.title}>{title}</h1>
+        <div className={styles.article}>
+            {bodys.map((body, i) => (
+                <p key={i}>
+                    {body}
+                </p>
+            ))}
+        </div>
     </main>
   );
 };
