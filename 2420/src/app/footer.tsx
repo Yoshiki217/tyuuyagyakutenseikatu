@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 const footer = () => {
   return (
+    
     <div className="bg-white pt-4 sm:pt-10 lg:pt-12">
         <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js"></script>

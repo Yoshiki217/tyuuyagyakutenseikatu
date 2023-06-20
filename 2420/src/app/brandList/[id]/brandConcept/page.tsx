@@ -23,7 +23,7 @@ const page = async ({ params }: { params: paramsType }) => {
   const bodys = body.split('\n');
 
   return (
-    <>
+
     <main className={styles.main}>
         <h1 className={styles.title}>
           {title}
@@ -38,7 +38,7 @@ const page = async ({ params }: { params: paramsType }) => {
             
         </div>
     </main>
-    </>
+
   );
 };
 export default page;
