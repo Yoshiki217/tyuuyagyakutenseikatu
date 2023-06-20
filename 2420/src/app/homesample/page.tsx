@@ -6,9 +6,7 @@ import styles from '../page.module.css';
 
 
 const page = async () => {
-
   const posts = await getPosts();
-
   return (
 
     <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -18,13 +16,14 @@ const page = async () => {
 
                     {posts.map(({ id, title }) => (
 
-                        <Link key={id} href={`/brandList/${id}/brandConcept`} className={styles.card}>
+                        <Link key={id} href={`/homesample/${id}`} className={styles.card}>
+                            <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="wobject-cover object-center transition duration-200 group-hover:scale-110"/>
                             <div>
-                              {title}
+                                {title}
                             </div>
                         </Link>
-                        
                     ))}
+
                 </div>    
             </div>
         </div>
@@ -33,4 +32,4 @@ const page = async () => {
   );
 };
 
-export default page;  
+export default page;
