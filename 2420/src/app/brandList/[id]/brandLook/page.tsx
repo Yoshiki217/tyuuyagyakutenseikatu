@@ -21,27 +21,62 @@ export async function generateStaticParams(): Promise<paramsType[]> {
 
 const page = async ({ params }: { params: paramsType }) => {
 
-  const { title, body } = await getPost(params.id);
+  const { title, body, id } = await getPost(params.id);
   const bodys = body.split('\n');
 
   return (
 
     <main className={styles.main}>
-        <div className='float: left'>
-            <Link href="https://homeless.official.ec/">Homelesstailor</Link>
-            <h1>ホームレステイラー 2023年春夏コレクション</h1>
+      <Link href="https://homeless.official.ec/" className='text-4xl flex justify-centerhover:text-gray-800'>Homelesstailor</Link>
 
-            <h3 className="text-gray-500">ルック</h3><br/>
-            <div className="flex flex-row space-x-0.5 border-t pt-6">
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image>
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image>
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image>
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image>
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image>
-                <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor"></Image><br/>
-                
-            </div>
+      <div className='float: left leading-10'>
+        <p className="text-2xl font-semibold">ホームレステイラー 2023年春夏コレクション</p>
+        <Link href="/brandList/1/brandLook" className="text-gray-500 m-1">ルック</Link>
+
+        <div className="border-t pt-6">
+          <div className="flex flex-row space-x-0.5 space-y-0.5">
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+          </div>
+
+          <div className="flex flex-row space-x-0.5 space-y-0.5">
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+          </div>
+
+          <div className="flex flex-row space-x-0.5 space-y-0.5">
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+          </div>
         </div>
+
+      </div>
+
+      <h2>other Season</h2>
+      <Link href={`brandList/${id}/brandLook`} className={styles.card}>
+        <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="wobject-cover object-center transition duration-200 group-hover:scale-110"/>
+        <span className="text-gray-500">
+          AW/SS
+        </span>
+      </Link>
+
+      <Link key={id} href={`/brandList/${id}/brandConcept`}>
+        <div>
+          brandConcept
+        </div>
+      </Link>
     </main>
   );
 };
