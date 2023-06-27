@@ -23,6 +23,12 @@ const page = async ({ params }: { params: paramsType }) => {
 
   const { title, body, id } = await getPost(params.id);
   const bodys = body.split('\n');
+  const looks = ['/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg',
+                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg']
+
+  const lookList = looks.map((look,i)=>{
+    return <div key={i}><Image src={look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div>
+  })
 
   return (
 
@@ -35,30 +41,15 @@ const page = async ({ params }: { params: paramsType }) => {
 
         <div className="border-t pt-6">
           <div className="flex flex-row space-x-0.5 space-y-0.5">
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={300} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+            {lookList}
           </div>
 
           <div className="flex flex-row space-x-0.5 space-y-0.5">
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+            {lookList}
           </div>
 
           <div className="flex flex-row space-x-0.5 space-y-0.5">
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
-              <Image src="/sample-homelesstailor.jpg" width={200}height={400} alt="Homelesstailor" className="transition duration-300 opacity-100 hover:opacity-80"></Image>
+          {lookList}
           </div>
         </div>
 
