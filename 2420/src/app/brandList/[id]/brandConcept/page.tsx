@@ -1,5 +1,7 @@
 import { getPost, getPosts } from '../../../../lib/getJsonPlaceholder';
 import styles from '../../../page.module.css';
+import Image from "next/image";
+import Link from 'next/link';
 
 type paramsType = {
 
@@ -19,7 +21,7 @@ export async function generateStaticParams(): Promise<paramsType[]> {
 
 const page = async ({ params }: { params: paramsType }) => {
 
-  const { title, body } = await getPost(params.id);
+  const { title, body, id } = await getPost(params.id);
   const bodys = body.split('\n');
 
   return (
@@ -37,6 +39,14 @@ const page = async ({ params }: { params: paramsType }) => {
             ))}
             
         </div>
+
+        <h2>all Season</h2>
+        <Link href={`brandList/${id}/brandLook`} className={styles.card}>
+            <Image src="/homelesstailor.png" width={334}height={500}alt="Homelestailor" className="wobject-cover object-center transition duration-200 group-hover:scale-110"/>
+            <span className="text-gray-500">
+                AW/SS
+            </span>
+        </Link>
     </main>
 
   );

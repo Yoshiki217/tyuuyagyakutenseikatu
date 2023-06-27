@@ -4,23 +4,12 @@ const footer = () => {
   return (
     
     <div className="bg-white pt-4 sm:pt-10 lg:pt-12">
-        <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js"></script>
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="flex flex-col items-center border-t pt-6">
-                {/* <!-- nav - start --> */}
-                <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
-                    <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">About</a>
-                    <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Investor Relations</a>
-                    <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Jobs</a>
-                    <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Press</a>
-                    <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Blog</a>
-                </nav>
-                {/* <!-- nav - end --> */}
-
+                
                 {/* <!-- social - start --> */}
                 <div className="flex gap-4">
-                    <a href="#" target="_blank" className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+                    <a href="https://www.instagram.com/___o2inss" target="_blank" className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
                         <svg className="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 
                             3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 
@@ -32,23 +21,12 @@ const footer = () => {
                             4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
-
-                    <a href="#" target="_blank" className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
-                        <svg className="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http:  //www.w3.org/2000/svg">
-                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 
-                            2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 
-                            6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 
-                            2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 
-                            2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                    </a>
-                    <a href="#mailgo" data-address="hello" data-domain="example.com" className='btn'>お問い合わせ</a>
                 </div>
                 {/* <!-- social - end --> */}
             </div>
 
             <div className="py-8 text-center text-sm text-gray-400">
-                © 2021 - Present Flowrift. All rights reserved.
+                © 2023 - know brand
             </div>
         
         </footer>
