@@ -45,5 +45,6 @@ const brandlogin = () => {
     </div>
     
   );
+  
 };
 export default brandlogin;
