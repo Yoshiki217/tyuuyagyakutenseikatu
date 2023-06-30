@@ -23,12 +23,19 @@ const page = async ({ params }: { params: paramsType }) => {
 
   const { title, body, id } = await getPost(params.id);
   const bodys = body.split('\n');
-  const looks = ['/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg',
-                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg']
+  const looks = ['/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg\n',
+                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg\n',
+                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg']
 
-  const lookList = looks.map((look,i)=>{
-    return <div key={i}><Image src={look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div>
+  
+  
+  const lookList = looks.map((look,i)=>{ 
+    return <div key={i}><Image src={look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div> 
   })
+
+  const looklist2 = looks.map(n => (look,i).map(s => {
+    return <div key={s.i}><Image src={s.look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div> 
+  }))
 
   return (
 
@@ -40,16 +47,8 @@ const page = async ({ params }: { params: paramsType }) => {
         <Link href="/brandList/1/brandLook" className="text-gray-500 m-1">ルック</Link>
 
         <div className="border-t pt-6">
-          <div className="flex flex-row space-x-0.5 space-y-0.5">
+          <div className="flex flex-row space-x-0.5 space-y-0.5 white-space: pre-wrap">
             {lookList}
-          </div>
-
-          <div className="flex flex-row space-x-0.5 space-y-0.5">
-            {lookList}
-          </div>
-
-          <div className="flex flex-row space-x-0.5 space-y-0.5">
-          {lookList}
           </div>
         </div>
 
