@@ -2,6 +2,7 @@ import { getPost, getPosts } from '../../../../lib/getJsonPlaceholder';
 import styles from '../../../page.module.css';
 import Image from "next/image";
 import Link from "next/link";
+import { Montserrat } from "@next/font/google";
 
 type paramsType = {
 
@@ -23,36 +24,40 @@ const page = async ({ params }: { params: paramsType }) => {
 
   const { title, body, id } = await getPost(params.id);
   const bodys = body.split('\n');
-  const looks = ['/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg\n',
-                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg\n',
-                '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg']
-
-  
-  
-  const lookList = looks.map((look,i)=>{ 
-    return <div key={i}><Image src={look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div> 
-  })
-
-  const looklist2 = looks.map(n => (look,i).map(s => {
-    return <div key={s.i}><Image src={s.look} width={200}height={400} alt={'Homelesstailor'} className='transition duration-300 opacity-100 hover:opacity-80'></Image></div> 
-  }))
+  const looks = ['/homelesstailor-sample1.png','/homelesstailor-sample2.png','/homelesstailor-sample3.png','/homelesstailor-sample4.png','/homelesstailor-sample5.png','/sample-homelesstailor.jpg',
+                 '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg',
+                 '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg','/sample-homelesstailor.jpg',
+                 '/sample-homelesstailor.jpg','/sample-homelesstailor.jpg',]
+              
+  const rows = looks.map((image, i) => {
+    if (i % 6 === 0) {
+      return <div key={i} className='flex flex-row space-x-0.5'>
+        {looks.slice(i, i + 6).map((image) => (
+          <Image src={image} width={200}height={300} alt='image' className='transition duration-300 opacity-100 hover:opacity-80'></Image>
+        ))}
+      </div>
+    } else {
+      return null;
+    }
+  });
 
   return (
-
     <main className={styles.main}>
-      <Link href="https://homeless.official.ec/" className='text-4xl flex justify-centerhover:text-gray-800'>Homelesstailor</Link>
+      <Image src="/homeless-tailor.png" width={300}height={300} alt="Homelesstailor"className='justify-centerhover:text-gray-800'></Image>
 
       <div className='float: left leading-10'>
-        <p className="text-2xl font-semibold">ホームレステイラー 2023年春夏コレクション</p>
+        <p className="text-2xl font-normal">ホームレステイラー 2023年春夏コレクション</p>
         <Link href="/brandList/1/brandLook" className="text-gray-500 m-1">ルック</Link>
 
         <div className="border-t pt-6">
-          <div className="flex flex-row space-x-0.5 space-y-0.5 white-space: pre-wrap">
-            {lookList}
+          <div className="space-y-0.5 white-space: pre-wrap">
+            {rows}
           </div>
         </div>
-
+      
       </div>
+
+      <Link href="https://homelesstailor.tumblr.com/" className='text-2x1 text-gray-500'>Homelesstailor 公式サイト</Link>
 
       <h2>other Season</h2>
       <Link href={`brandList/${id}/brandLook`} className={styles.card}>
@@ -70,6 +75,7 @@ const page = async ({ params }: { params: paramsType }) => {
     </main>
   );
 };
+
 export default page;
 
 export const dynamicParams = false;
