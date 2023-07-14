@@ -33,7 +33,7 @@ const page = async ({ params }: { params: paramsType }) => {
     if (i % 6 === 0) {
       return <div key={i} className='flex flex-row space-x-0.5'>
         {looks.slice(i, i + 6).map((image) => (
-          <Image src={image} width={200}height={300} alt='image' className='transition duration-300 opacity-100 hover:opacity-80'></Image>
+          <Image key={image} src={image} width={200}height={300} alt='image' className='transition duration-300 opacity-100 hover:opacity-80'></Image>
         ))}
       </div>
     } else {
