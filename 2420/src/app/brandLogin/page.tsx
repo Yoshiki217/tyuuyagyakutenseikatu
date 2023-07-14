@@ -32,7 +32,7 @@ const brandlogin = () => {
   
                 <div className="flex justify-center items-center bg-gray-100 p-4">
                     <p className="text-gray-500 text-sm text-center">
-                        Don't have an account? 
+                        {`Don't have an account?`}
                         <a href="brandCreate" className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">
                             Register
                         </a>
