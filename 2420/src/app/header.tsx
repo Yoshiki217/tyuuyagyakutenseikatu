@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import Script from 'next/script'
 
 const header = () => {
   return (
 
     <header className="z-50 w-full bg-white text-sm py-5 dark:bg-gray-800">
-        <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js"></script>
+        <Script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.2/dist/mailtoui-min.js"></Script>
         <div className='flex flex-wrap justify-center'>
             <div className="flex items-center justify-between">
                 <a className="flex-none text-3xl font-semibold dark:text-white" href="/">

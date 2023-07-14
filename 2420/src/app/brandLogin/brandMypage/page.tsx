@@ -1,5 +1,5 @@
-import { getPost, getPosts } from '../../../lib/getJsonPlaceholder';
-import styles from '../../../page.module.css';
+import { getPost, getPosts } from "../../../lib/getJsonPlaceholder";
+import styles from "../../../page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
